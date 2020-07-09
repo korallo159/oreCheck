@@ -1,0 +1,9 @@
+name: oreCheck
+version: ${project.version}
+main: koral.orecheck.oreCheck
+api-version: 1.13
+authors: [koral]
+description: plugin that helps moderation caught x-rays
+commands:
+  orecheck:
+    permission: orecheck.admin
