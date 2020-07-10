@@ -28,7 +28,8 @@ public final class oreCheck extends JavaPlugin implements Listener, CommandExecu
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
         this.getCommand("orecheck");
-        for(Player player : Bukkit.getServer().getOnlinePlayers()){
+
+        for(Player player : Bukkit.getServer().getOnlinePlayers()){         //avoid null after reload.
             if(player.hasPermission("orecheck.admin"))
             {
                 this.message.put(player, 1);
@@ -56,7 +57,8 @@ public final class oreCheck extends JavaPlugin implements Listener, CommandExecu
             p.sendMessage(ChatColor.RED + "Wyswietlanie wykopanych rud"  + " diamentu" + ChatColor.GREEN + " włączone");
             p.sendMessage(ChatColor.YELLOW + "/orecheck on | off" + ChatColor.RED +" aby manipulować wyświetlaniem wiadomości.");
         }
-
+        else
+            this.message.put(p, 0);
     }
 
 
